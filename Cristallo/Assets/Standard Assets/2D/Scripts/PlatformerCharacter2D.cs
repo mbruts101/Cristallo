@@ -19,8 +19,9 @@ namespace UnityStandardAssets._2D
         private Animator m_Anim;            // Reference to the player's animator component.
         private Rigidbody2D m_Rigidbody2D;
         private bool m_FacingRight = true;  // For determining which way the player is currently facing.
-
-        private void Awake()
+        private bool canDoubleJump = true;
+        private bool fixSpeed = false;
+        private void Awake() 
         {
             // Setting up references.
             m_GroundCheck = transform.Find("GroundCheck");
@@ -46,6 +47,19 @@ namespace UnityStandardAssets._2D
 
             // Set the vertical animation
             m_Anim.SetFloat("vSpeed", m_Rigidbody2D.velocity.y);
+       
+        }
+        void Update()
+        {
+            if (Input.GetKeyDown(KeyCode.LeftShift) && m_Grounded)
+            {
+                m_MaxSpeed = m_MaxSpeed * 1.5f;
+
+            }
+            if (Input.GetKeyUp(KeyCode.LeftShift))
+            {
+                m_MaxSpeed = m_MaxSpeed / 1.5f;
+            }
         }
 
 
@@ -96,6 +110,13 @@ namespace UnityStandardAssets._2D
                 m_Grounded = false;
                 m_Anim.SetBool("Ground", false);
                 m_Rigidbody2D.AddForce(new Vector2(0f, m_JumpForce));
+                canDoubleJump = true;
+               
+            }
+            else if(jump && canDoubleJump)
+            {
+                m_Rigidbody2D.AddForce(new Vector2(0f, m_JumpForce));
+                canDoubleJump = false;
             }
         }
 
