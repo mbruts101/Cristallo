@@ -46,6 +46,7 @@
   </ItemGroup>
   <ItemGroup>
      <Compile Include="Assets\crystalTrigger.cs" />
+     <Compile Include="Assets\monsterTrigger.cs" />
      <None Include="Assets\ADD_ASSETS_HERE.txt" />
      <None Include="Assets\Standard Assets\CrossPlatformInput\CrossPlatformInputGuidelines.txt" />
  <Reference Include="UnityEngine.UI">
