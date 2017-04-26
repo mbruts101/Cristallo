@@ -21,7 +21,7 @@ public class GainCrystalPower : MonoBehaviour {
             }
         }
     }
-    void onTriggerEnter2D(Collider2D col)
+    void OnTriggerEnter2D(Collider2D col)
     {
         if(col.gameObject.tag == "Player")
         {
@@ -51,7 +51,7 @@ public class GainCrystalPower : MonoBehaviour {
             }
         }
     }
-    void onTriggerExit2D(Collider2D col)
+    void OnTriggerExit2D(Collider2D col)
     {
         if(col.gameObject.tag == "Player")
         {

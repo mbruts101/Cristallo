@@ -16,7 +16,6 @@ public class Killzone : MonoBehaviour {
     {
         if(col.gameObject.tag == "Player")
         {
-            print("YOURE GONNA DIE");
             gm.takenDamage = true;
             gm.fallen = true;
             gm.checkPlayerLife();

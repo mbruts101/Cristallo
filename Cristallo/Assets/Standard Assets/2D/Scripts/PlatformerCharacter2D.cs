@@ -127,8 +127,8 @@ namespace UnityStandardAssets._2D
             }
             else if (jump && canDoubleJump && PlayerStats.HasRed == true)
             {
-                m_Rigidbody2D.AddForce(new Vector2(0f, m_JumpForce));
                 canDoubleJump = false;
+                m_Rigidbody2D.AddForce(new Vector2(0f, m_JumpForce));
             }
         }
 
