@@ -94,10 +94,6 @@
       <Project>{972E40A0-A059-50F5-9F87-D68CEB323884}</Project>
       <Name>Cristallo.CSharp.Plugins</Name>
     </ProjectReference>
-    <ProjectReference Include="Cristallo.CSharp.csproj">
-      <Project>{8435F686-1F8E-7159-0049-7881035515CA}</Project>
-      <Name>Cristallo.CSharp</Name>
-    </ProjectReference>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Assets\Editor\CrossPlatformInput\CrossPlatformInputInitialize.cs" />
