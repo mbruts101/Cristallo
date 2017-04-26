@@ -5,6 +5,7 @@ namespace UnityStandardAssets._2D
 {
     public class PlatformerCharacter2D : MonoBehaviour
     {
+        CrystalManager cm;
         [SerializeField] private float m_MaxSpeed = 10f;                    // The fastest the player can travel in the x axis.
         [SerializeField] private float m_JumpForce = 400f;                  // Amount of force added when the player jumps.
         [Range(0, 1)] [SerializeField] private float m_CrouchSpeed = .36f;  // Amount of maxSpeed applied to crouching movement. 1 = 100%
@@ -20,7 +21,6 @@ namespace UnityStandardAssets._2D
         private Rigidbody2D m_Rigidbody2D;
         private bool m_FacingRight = true;  // For determining which way the player is currently facing.
         public bool canDoubleJump = true;
-        private bool fixSpeed = false;
         private void Awake() 
         {
             // Setting up references.
@@ -28,6 +28,7 @@ namespace UnityStandardAssets._2D
             m_CeilingCheck = transform.Find("CeilingCheck");
             m_Anim = GetComponent<Animator>();
             m_Rigidbody2D = GetComponent<Rigidbody2D>();
+            cm = GameObject.FindGameObjectWithTag("CrystalManager").GetComponent<CrystalManager>();
         }
 
 
@@ -59,6 +60,17 @@ namespace UnityStandardAssets._2D
             if (Input.GetKeyUp(KeyCode.LeftShift))
             {
                 m_MaxSpeed = m_MaxSpeed / 1.5f;
+            }
+            if (Input.GetKeyDown(KeyCode.Q))
+            {
+                if (cm.NearCrystal == true)
+                {
+                    if (cm.red == true)
+                    {
+                        PlayerStats.HasRed = true;
+                        print("got double jump");
+                    }
+                }
             }
         }
 
@@ -111,9 +123,9 @@ namespace UnityStandardAssets._2D
                 m_Anim.SetBool("Ground", false);
                 m_Rigidbody2D.AddForce(new Vector2(0f, m_JumpForce));
                 canDoubleJump = true;
-               
+
             }
-            else if(jump && canDoubleJump)
+            else if (jump && canDoubleJump && PlayerStats.HasRed == true)
             {
                 m_Rigidbody2D.AddForce(new Vector2(0f, m_JumpForce));
                 canDoubleJump = false;
