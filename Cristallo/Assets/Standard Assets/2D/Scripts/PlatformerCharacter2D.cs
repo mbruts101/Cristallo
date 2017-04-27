@@ -21,6 +21,8 @@ namespace UnityStandardAssets._2D
         private Rigidbody2D m_Rigidbody2D;
         private bool m_FacingRight = true;  // For determining which way the player is currently facing.
         public bool canDoubleJump = true;
+		private bool isSprinting = false;
+
         private void Awake() 
         {
             // Setting up references.
@@ -54,12 +56,14 @@ namespace UnityStandardAssets._2D
         {
             if (Input.GetKeyDown(KeyCode.LeftShift) && m_Grounded)
             {
+				isSprinting = true;
                 m_MaxSpeed = m_MaxSpeed * 1.5f;
 
             }
-            if (Input.GetKeyUp(KeyCode.LeftShift))
+			if (Input.GetKeyUp(KeyCode.LeftShift) && isSprinting)
             {
-                m_MaxSpeed = m_MaxSpeed / 1.5f;
+					m_MaxSpeed = m_MaxSpeed / 1.5f;
+				    isSprinting = false;
             }
             if (Input.GetKeyDown(KeyCode.Q))
             {
