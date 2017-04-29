@@ -1,17 +1,14 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class monsterTrigger : MonoBehaviour
-{
-	private int t;
-	public int distance;
+public class platform : MonoBehaviour {
 	public int speed;
+	public int t;
 	public int c;
+	public int distance;
 	// Use this for initialization
-	GameManager gm;
 	void Start () 
 	{
-		gm = GameObject.FindGameObjectWithTag("GameManager").GetComponent<GameManager>();
 		t = 0;
 		distance = distance + 1;
 	}
@@ -25,15 +22,5 @@ public class monsterTrigger : MonoBehaviour
 			speed = -speed;
 		}
 		t++;
-	}
-
-	void OnTriggerEnter2D(Collider2D other)
-	{
-		if(other.gameObject.tag == "Player")
-		{
-			gm.takenDamage = true;
-			gm.fallen = true;
-			gm.checkPlayerLife();
-		}
 	}
 }
