@@ -6,6 +6,8 @@ public class platform : MonoBehaviour {
 	public int t;
 	public int c;
 	public int distance;
+	public bool up;
+	public bool waitForTrigger;
 	// Use this for initialization
 	void Start () 
 	{
@@ -16,11 +18,25 @@ public class platform : MonoBehaviour {
 	// Update is called once per frame
 	void Update ()
 	{
-		this.transform.Translate(Vector3.right * speed * Time.deltaTime);
-		if ((t - c) % distance == 0) 
+		if (!waitForTrigger)
 		{
-			speed = -speed;
+			if (up) {
+				this.transform.Translate (Vector3.up * speed * Time.deltaTime);
+			} else {
+				this.transform.Translate (Vector3.right * speed * Time.deltaTime);
+			}
+			if ((t - c) % distance == 0) 
+			{
+				speed = -speed;
+			}
+			t++;
 		}
-		t++;
+	
+	}
+
+	void OnTriggerEnter2D(Collider2D other)
+	{
+		print ("ONTHETRIGGER");
+		waitForTrigger = false;
 	}
 }
