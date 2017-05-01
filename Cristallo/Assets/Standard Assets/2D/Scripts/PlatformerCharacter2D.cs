@@ -69,7 +69,35 @@ namespace UnityStandardAssets._2D
                     {
                         PlayerStats.HasRed = true;
                         print("got double jump");
+                        cm.red = false;
                     }
+                    if(cm.yellow == true)
+                    {
+                        PlayerStats.HasYellow = true;
+                        cm.yellow = false;
+                    }
+                    if(cm.orange == true)
+                    {
+                        PlayerStats.HasOrange = true;
+                        cm.orange = false;
+                    }
+                    if(cm.green == true)
+                    {
+                        PlayerStats.HasGreen = true;
+                        cm.green = false;
+                    }
+                    if(cm.blue == true)
+                    {
+                        PlayerStats.HasBlue = true;
+                        cm.blue = false;
+                    }
+                    if(cm.purple == true)
+                    {
+                        PlayerStats.HasPurple = true;
+                        cm.purple = false;
+                    }
+                   
+                    cm.hasPower = true;
                 }
             }
         }
@@ -142,6 +170,25 @@ namespace UnityStandardAssets._2D
             Vector3 theScale = transform.localScale;
             theScale.x *= -1;
             transform.localScale = theScale;
+        }
+        public void OnTriggerEnter2D(Collider col)
+        {
+            if (col.gameObject.tag == "MovingPlatform")
+            {
+                gameObject.transform.parent = col.gameObject.transform;
+            }
+            if (col.gameObject.tag == "BouncyPad")
+            {
+                print("trigger bounce double jump reset");
+                m_Grounded = true;
+            }
+        }
+        public void OnTriggerExit2D(Collider col)
+        {
+            if(col.gameObject.tag == "MovingPlatform")
+            {
+                gameObject.transform.parent = null;
+            }
         }
     }
 }

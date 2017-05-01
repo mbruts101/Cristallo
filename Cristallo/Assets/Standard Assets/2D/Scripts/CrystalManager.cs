@@ -10,6 +10,7 @@ public class CrystalManager : MonoBehaviour {
     public bool green;
     public bool blue;
     public bool purple;
+    public bool hasPower;
     // Use this for initialization
     void Start () {
 	
