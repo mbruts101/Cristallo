@@ -6,6 +6,7 @@ namespace UnityStandardAssets._2D
     public class PlatformerCharacter2D : MonoBehaviour
     {
         CrystalManager cm;
+        private int jumpcount;
         [SerializeField] private float m_MaxSpeed = 10f;                    // The fastest the player can travel in the x axis.
         [SerializeField] private float m_JumpForce = 400f;                  // Amount of force added when the player jumps.
         [Range(0, 1)] [SerializeField] private float m_CrouchSpeed = .36f;  // Amount of maxSpeed applied to crouching movement. 1 = 100%
@@ -100,6 +101,10 @@ namespace UnityStandardAssets._2D
                     cm.hasPower = true;
                 }
             }
+            if(m_Grounded && PlayerStats.HasRed)
+            {
+                jumpcount = 1;
+            }
         }
 
 
@@ -150,12 +155,22 @@ namespace UnityStandardAssets._2D
                 m_Grounded = false;
                 m_Anim.SetBool("Ground", false);
                 m_Rigidbody2D.AddForce(new Vector2(0f, m_JumpForce));
-                canDoubleJump = true;
+                if (PlayerStats.HasRed)
+                {
+                    canDoubleJump = true;
+                }
+                jumpcount--;
 
             }
             else if (jump && canDoubleJump && PlayerStats.HasRed == true)
             {
                 canDoubleJump = false;
+                m_Rigidbody2D.AddForce(new Vector2(0f, m_JumpForce));
+                jumpcount--;
+            }
+            else if (jump && !m_Grounded && jumpcount > 0)
+            {
+                jumpcount--;
                 m_Rigidbody2D.AddForce(new Vector2(0f, m_JumpForce));
             }
         }
@@ -171,19 +186,14 @@ namespace UnityStandardAssets._2D
             theScale.x *= -1;
             transform.localScale = theScale;
         }
-        public void OnTriggerEnter2D(Collider col)
+        public void OnTriggerEnter2D(Collider2D col)
         {
             if (col.gameObject.tag == "MovingPlatform")
             {
                 gameObject.transform.parent = col.gameObject.transform;
             }
-            if (col.gameObject.tag == "BouncyPad")
-            {
-                print("trigger bounce double jump reset");
-                m_Grounded = true;
-            }
         }
-        public void OnTriggerExit2D(Collider col)
+        public void OnTriggerExit2D(Collider2D col)
         {
             if(col.gameObject.tag == "MovingPlatform")
             {
