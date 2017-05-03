@@ -41,7 +41,7 @@ public class GameManager : MonoBehaviour {
             }
             else if (PlayerStats.Health == 0)
             {
-                //reload scene
+                Application.LoadLevel(Application.loadedLevel);
             }
         }
     }
