@@ -75,8 +75,12 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Assets\closetTrigger.cs" />
+    <Compile Include="Assets\collectable.cs" />
     <Compile Include="Assets\crystalTrigger.cs" />
     <Compile Include="Assets\monsterTrigger.cs" />
+    <Compile Include="Assets\platform.cs" />
+    <Compile Include="Assets\switchScript.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\ADD_ASSETS_HERE.txt" />
