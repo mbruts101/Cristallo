@@ -6,6 +6,7 @@ namespace UnityStandardAssets._2D
     public class PlatformerCharacter2D : MonoBehaviour
     {
         CrystalManager cm;
+        private int jumpcount;
         [SerializeField] private float m_MaxSpeed = 10f;                    // The fastest the player can travel in the x axis.
         [SerializeField] private float m_JumpForce = 400f;                  // Amount of force added when the player jumps.
         [Range(0, 1)] [SerializeField] private float m_CrouchSpeed = .36f;  // Amount of maxSpeed applied to crouching movement. 1 = 100%
@@ -73,8 +74,40 @@ namespace UnityStandardAssets._2D
                     {
                         PlayerStats.HasRed = true;
                         print("got double jump");
+                        cm.red = false;
                     }
+                    if(cm.yellow == true)
+                    {
+                        PlayerStats.HasYellow = true;
+                        cm.yellow = false;
+                    }
+                    if(cm.orange == true)
+                    {
+                        PlayerStats.HasOrange = true;
+                        cm.orange = false;
+                    }
+                    if(cm.green == true)
+                    {
+                        PlayerStats.HasGreen = true;
+                        cm.green = false;
+                    }
+                    if(cm.blue == true)
+                    {
+                        PlayerStats.HasBlue = true;
+                        cm.blue = false;
+                    }
+                    if(cm.purple == true)
+                    {
+                        PlayerStats.HasPurple = true;
+                        cm.purple = false;
+                    }
+                   
+                    cm.hasPower = true;
                 }
+            }
+            if(m_Grounded && PlayerStats.HasRed)
+            {
+                jumpcount = 1;
             }
         }
 
@@ -126,12 +159,22 @@ namespace UnityStandardAssets._2D
                 m_Grounded = false;
                 m_Anim.SetBool("Ground", false);
                 m_Rigidbody2D.AddForce(new Vector2(0f, m_JumpForce));
-                canDoubleJump = true;
+                if (PlayerStats.HasRed)
+                {
+                    canDoubleJump = true;
+                }
+                jumpcount--;
 
             }
             else if (jump && canDoubleJump && PlayerStats.HasRed == true)
             {
                 canDoubleJump = false;
+                m_Rigidbody2D.AddForce(new Vector2(0f, m_JumpForce));
+                jumpcount--;
+            }
+            else if (jump && !m_Grounded && jumpcount > 0)
+            {
+                jumpcount--;
                 m_Rigidbody2D.AddForce(new Vector2(0f, m_JumpForce));
             }
         }
@@ -146,6 +189,20 @@ namespace UnityStandardAssets._2D
             Vector3 theScale = transform.localScale;
             theScale.x *= -1;
             transform.localScale = theScale;
+        }
+        public void OnTriggerEnter2D(Collider2D col)
+        {
+            if (col.gameObject.tag == "MovingPlatform")
+            {
+                gameObject.transform.parent = col.gameObject.transform;
+            }
+        }
+        public void OnTriggerExit2D(Collider2D col)
+        {
+            if(col.gameObject.tag == "MovingPlatform")
+            {
+                gameObject.transform.parent = null;
+            }
         }
     }
 }

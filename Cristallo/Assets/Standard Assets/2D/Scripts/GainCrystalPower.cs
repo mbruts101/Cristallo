@@ -4,9 +4,16 @@ using System.Collections;
 public class GainCrystalPower : MonoBehaviour {
     CrystalManager cm; 
     public bool NearCrystal;
-    public bool active = true;
-	// Use this for initialization
-	void Start () {
+    public bool active;
+    public bool returning; 
+    public bool red;
+    public bool orange;
+    public bool yellow;
+    public bool green;
+    public bool blue;
+    public bool purple;
+    // Use this for initialization
+    void Start () {
        cm = GameObject.FindGameObjectWithTag("CrystalManager").GetComponent<CrystalManager>();
     }
 
@@ -15,9 +22,54 @@ public class GainCrystalPower : MonoBehaviour {
     {
         if (Input.GetKeyDown(KeyCode.Q))
         {
-            if (NearCrystal == true && active == false)
+            if (NearCrystal == true && active == true)
             {
-                active = false;
+                active = false; red = false; orange = false; yellow = false; blue = false; green = false; purple = false;
+            }
+            else if (NearCrystal == true && active == false)
+            {
+                returning = true;
+                if (cm.hasPower == true)
+                {
+                    print("returning power");
+                    if (PlayerStats.HasRed && returning)
+                    {
+                        PlayerStats.HasRed = false;
+                        red = true;
+                        returning = false;
+                    }
+                    if (PlayerStats.HasYellow && returning)
+                    {
+                        PlayerStats.HasYellow = false;
+                        yellow = true;
+                        returning = false;
+                    }
+                    if (PlayerStats.HasOrange && returning)
+                    {
+                        PlayerStats.HasOrange = false;
+                        orange = true;
+                        returning = false;
+                    }
+                    if (PlayerStats.HasGreen && returning)
+                    {
+                        PlayerStats.HasGreen = false;
+                        green = true;
+                        returning = false;
+                    }
+                    if (PlayerStats.HasBlue && returning)
+                    {
+                        PlayerStats.HasBlue = false;
+                        blue = true;
+                        returning = false;
+                    }
+                    if (PlayerStats.HasPurple && returning)
+                    {
+                        PlayerStats.HasPurple = false;
+                        purple = true;
+                        returning = false;
+                    }
+                    active = true;
+                }
             }
         }
     }
@@ -25,61 +77,63 @@ public class GainCrystalPower : MonoBehaviour {
     {
         if(col.gameObject.tag == "Player")
         {
-            print("colliding with crystal");
             NearCrystal = true;
             cm.NearCrystal = true;
-            switch (this.gameObject.tag)
+            if (red) {
+                cm.red = true;
+                }
+            if (blue) {
+                cm.blue = true;
+                }
+            if (yellow)
             {
-                case "RedCrystal":
-                    cm.red = true;
-                    break;
-                case "BlueCrystal":
-                    cm.blue = true;
-                    break;
-                case "YellowCrystal":
-                    cm.yellow = true;
-                    break;
-                case "OrangeCrystal":
-                    cm.orange = true;
-                    break;
-                case "GreenCyrstal":
-                    cm.green = true;
-                    break;
-                case "PurpleCrystal":
-                    cm.purple = true;
-                    break;
+                cm.yellow = true;
+            }
+            if (orange)
+            {
+                cm.orange = true;
+            }
+            if (green)
+            {
+                cm.green = true;
+            }
+            if(purple)
+            {
+                cm.purple = true;
+            }
             }
         }
-    }
     void OnTriggerExit2D(Collider2D col)
     {
         if(col.gameObject.tag == "Player")
         {
             NearCrystal = false;
-            print("the power fades");
             cm.NearCrystal = false;
-            switch (this.gameObject.tag)
-            {
-                case "RedCrystal":
-                    cm.red = false;
-                    break;
-                case "BlueCrystal":
-                    cm.blue = false;
-                    break;
-                case "YellowCrystal":
-                    cm.yellow = false;
-                    break;
-                case "OrangeCrystal":
-                    cm.orange = false;
-                    break;
-                case "GreenCyrstal":
-                    cm.green = false;
-                    break;
-                case "PurpleCrystal":
-                    cm.purple = false;
-                    break;
-            }
+        if (red)
+        {
+            cm.red = false;
+        }
+        if (blue)
+        {
+            cm.blue = false;
+        }
+        if (yellow)
+        {
+            cm.yellow = false;
+        }
+        if (orange)
+        {
+            cm.orange = false;
+        }
+        if (green)
+        {
+            cm.green = false;
+        }
+        if (purple)
+        {
+            cm.purple = false;
         }
     }
-    
+    }
 }
+    

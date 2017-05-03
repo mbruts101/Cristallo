@@ -4,7 +4,7 @@ using System.Collections;
 public static class PlayerStats
 {
     private static int health = 3;
-    private static bool hasRed, hasYellow, hasOrange, hasGreen, hasBlue, hasPurpele;
+    private static bool hasRed, hasYellow, hasOrange, hasGreen, hasBlue, hasPurple;
     
 
     public static int Health
@@ -85,16 +85,16 @@ public static class PlayerStats
         }
     }
 
-    public static bool HasPurpele
+    public static bool HasPurple
     {
         get
         {
-            return hasPurpele;
+            return hasPurple;
         }
 
         set
         {
-            hasPurpele = value;
+            hasPurple = value;
         }
     }
 }
