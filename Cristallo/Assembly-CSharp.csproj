@@ -50,6 +50,7 @@
      <Compile Include="Assets\crystalTrigger.cs" />
      <Compile Include="Assets\monsterTrigger.cs" />
      <Compile Include="Assets\platform.cs" />
+     <Compile Include="Assets\prompt.cs" />
      <Compile Include="Assets\switchScript.cs" />
      <None Include="Assets\ADD_ASSETS_HERE.txt" />
      <None Include="Assets\Standard Assets\CrossPlatformInput\CrossPlatformInputGuidelines.txt" />
