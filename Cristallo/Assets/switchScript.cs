@@ -3,6 +3,8 @@ using System.Collections;
 
 public class switchScript : MonoBehaviour {
 	public GameObject o;
+	public Sprite s;
+	public Sprite s1;
 	public bool nearSwitch = false;
 	// Use this for initialization
 	void Start () {
@@ -15,6 +17,8 @@ public class switchScript : MonoBehaviour {
 		if (nearSwitch && Input.GetKeyDown (KeyCode.Q))
 		{
 			Destroy (o);
+			SpriteRenderer sr = gameObject.GetComponent<SpriteRenderer>(); 
+			sr.sprite = s1;
 		}
 	
 	}

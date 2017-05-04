@@ -12,6 +12,8 @@ public class GainCrystalPower : MonoBehaviour {
     public bool green;
     public bool blue;
     public bool purple;
+	public Sprite empty;
+	public Sprite redSprite;
     // Use this for initialization
     void Start () {
        cm = GameObject.FindGameObjectWithTag("CrystalManager").GetComponent<CrystalManager>();
@@ -24,6 +26,8 @@ public class GainCrystalPower : MonoBehaviour {
         {
             if (NearCrystal == true && active == true)
             {
+				SpriteRenderer sr = gameObject.GetComponent<SpriteRenderer>(); 
+				sr.sprite = empty;
                 active = false; red = false; orange = false; yellow = false; blue = false; green = false; purple = false;
             }
             else if (NearCrystal == true && active == false)
@@ -37,6 +41,8 @@ public class GainCrystalPower : MonoBehaviour {
                         PlayerStats.HasRed = false;
                         red = true;
                         returning = false;
+						SpriteRenderer sr = gameObject.GetComponent<SpriteRenderer>(); 
+						sr.sprite = redSprite;
                     }
                     if (PlayerStats.HasYellow && returning)
                     {
