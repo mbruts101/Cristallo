@@ -2,14 +2,13 @@
 using System.Collections;
 
 public class switchScript : MonoBehaviour {
-
 	public GameObject o;
 	public bool nearSwitch = false;
 	// Use this for initialization
 	void Start () {
-	
+
 	}
-	
+
 	// Update is called once per frame
 	void Update () 
 	{

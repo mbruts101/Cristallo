@@ -1,6 +1,6 @@
 fileFormatVersion: 2
 guid: 318a87e9375444128834413c14eded37
-timeCreated: 1493768384
+timeCreated: 1493857260
 licenseType: Free
 TextureImporter:
   fileIDToRecycleName:
@@ -77,363 +77,158 @@ TextureImporter:
     - name: walkingspritesheet_0
       rect:
         serializedVersion: 2
-        x: 0
-        y: 478
-        width: 128
-        height: 239
+        x: 13
+        y: 494
+        width: 110
+        height: 185
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline:
-      - - {x: -64, y: 119.5}
-        - {x: -64, y: -119.5}
-        - {x: 64, y: -119.5}
-        - {x: 64, y: 119.5}
+      - - {x: -51, y: 92.5}
+        - {x: -55, y: 81.5}
+        - {x: -55, y: -90.5}
+        - {x: -51, y: -92.5}
+        - {x: 55, y: -92.5}
+        - {x: 55, y: -24.5}
+        - {x: 15, y: 92.5}
     - name: walkingspritesheet_1
       rect:
         serializedVersion: 2
-        x: 128
-        y: 478
-        width: 128
-        height: 239
+        x: 168
+        y: 495
+        width: 59
+        height: 191
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline:
-      - - {x: -64, y: 119.5}
-        - {x: -64, y: -119.5}
-        - {x: 64, y: -119.5}
-        - {x: 64, y: 119.5}
+      - - {x: -29.5, y: 95.5}
+        - {x: -29.5, y: -95.5}
+        - {x: 29.5, y: -95.5}
+        - {x: 29.5, y: 77.5}
+        - {x: 19.5, y: 95.5}
     - name: walkingspritesheet_2
       rect:
         serializedVersion: 2
-        x: 256
-        y: 478
-        width: 128
-        height: 239
+        x: 268
+        y: 494
+        width: 110
+        height: 186
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline:
-      - - {x: -64, y: 119.5}
-        - {x: -64, y: -119.5}
-        - {x: 64, y: -119.5}
-        - {x: 64, y: 119.5}
+      - - {x: 28, y: 92}
+        - {x: 23, y: 93}
+        - {x: -46, y: 93}
+        - {x: -55, y: 71}
+        - {x: -55, y: -93}
+        - {x: 40, y: -93}
+        - {x: 50, y: -88}
+        - {x: 55, y: -85}
+        - {x: 55, y: -3}
     - name: walkingspritesheet_3
       rect:
         serializedVersion: 2
-        x: 384
-        y: 478
-        width: 128
-        height: 239
+        x: 420
+        y: 495
+        width: 59
+        height: 191
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline:
-      - - {x: -64, y: 119.5}
-        - {x: -64, y: -119.5}
-        - {x: 64, y: -119.5}
-        - {x: 64, y: 119.5}
+      - - {x: 29.5, y: 94.5}
+        - {x: 25.5, y: 95.5}
+        - {x: -17.5, y: 95.5}
+        - {x: -29.5, y: 87.5}
+        - {x: -29.5, y: -93.5}
+        - {x: -21.5, y: -95.5}
+        - {x: 26.5, y: -95.5}
+        - {x: 26.5, y: -91.5}
+        - {x: 21.5, y: -84.5}
+        - {x: 29.5, y: -20.5}
     - name: walkingspritesheet_4
       rect:
         serializedVersion: 2
-        x: 512
-        y: 478
-        width: 128
-        height: 239
+        x: 525
+        y: 494
+        width: 110
+        height: 185
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline:
-      - - {x: -64, y: 119.5}
-        - {x: -64, y: -119.5}
-        - {x: 64, y: -119.5}
-        - {x: 64, y: 119.5}
+      - - {x: 55, y: 40.5}
+        - {x: 32, y: 92.5}
+        - {x: -41, y: 92.5}
+        - {x: -48, y: 72.5}
+        - {x: -55, y: 51.5}
+        - {x: -55, y: -89.5}
+        - {x: -54, y: -92.5}
+        - {x: -17, y: -92.5}
+        - {x: -14, y: -86.5}
+        - {x: 5, y: -92.5}
+        - {x: 55, y: -92.5}
     - name: walkingspritesheet_5
       rect:
         serializedVersion: 2
-        x: 640
-        y: 478
-        width: 128
-        height: 239
+        x: 676
+        y: 495
+        width: 60
+        height: 191
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline:
-      - - {x: -64, y: 119.5}
-        - {x: -64, y: -119.5}
-        - {x: 64, y: -119.5}
-        - {x: 64, y: 119.5}
+      - - {x: -30, y: 95.5}
+        - {x: -30, y: -95.5}
+        - {x: 30, y: -95.5}
+        - {x: 30, y: 95.5}
     - name: walkingspritesheet_6
       rect:
         serializedVersion: 2
-        x: 768
-        y: 478
-        width: 128
-        height: 239
+        x: 780
+        y: 494
+        width: 110
+        height: 185
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline:
-      - - {x: -64, y: 119.5}
-        - {x: -64, y: -119.5}
-        - {x: 64, y: -119.5}
-        - {x: 64, y: 119.5}
+      - - {x: 55, y: -87.5}
+        - {x: 55, y: 33.5}
+        - {x: 29, y: 92.5}
+        - {x: -38, y: 92.5}
+        - {x: -55, y: 60.5}
+        - {x: -55, y: -92.5}
+        - {x: -14, y: -92.5}
+        - {x: -13, y: -84.5}
+        - {x: 24, y: -92.5}
+        - {x: 45, y: -92.5}
     - name: walkingspritesheet_7
       rect:
         serializedVersion: 2
-        x: 896
-        y: 478
-        width: 128
-        height: 239
+        x: 939
+        y: 495
+        width: 59
+        height: 191
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline:
-      - - {x: -64, y: 119.5}
-        - {x: -64, y: -119.5}
-        - {x: 64, y: -119.5}
-        - {x: 64, y: 119.5}
-    - name: walkingspritesheet_8
-      rect:
-        serializedVersion: 2
-        x: 0
-        y: 239
-        width: 128
-        height: 239
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline:
-      - - {x: -64, y: 119.5}
-        - {x: -64, y: -119.5}
-        - {x: 64, y: -119.5}
-        - {x: 64, y: 119.5}
-    - name: walkingspritesheet_9
-      rect:
-        serializedVersion: 2
-        x: 128
-        y: 239
-        width: 128
-        height: 239
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline:
-      - - {x: -64, y: 119.5}
-        - {x: -64, y: -119.5}
-        - {x: 64, y: -119.5}
-        - {x: 64, y: 119.5}
-    - name: walkingspritesheet_10
-      rect:
-        serializedVersion: 2
-        x: 256
-        y: 239
-        width: 128
-        height: 239
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline:
-      - - {x: -64, y: 119.5}
-        - {x: -64, y: -119.5}
-        - {x: 64, y: -119.5}
-        - {x: 64, y: 119.5}
-    - name: walkingspritesheet_11
-      rect:
-        serializedVersion: 2
-        x: 384
-        y: 239
-        width: 128
-        height: 239
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline:
-      - - {x: -64, y: 119.5}
-        - {x: -64, y: -119.5}
-        - {x: 64, y: -119.5}
-        - {x: 64, y: 119.5}
-    - name: walkingspritesheet_12
-      rect:
-        serializedVersion: 2
-        x: 512
-        y: 239
-        width: 128
-        height: 239
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline:
-      - - {x: -64, y: 119.5}
-        - {x: -64, y: -119.5}
-        - {x: 64, y: -119.5}
-        - {x: 64, y: 119.5}
-    - name: walkingspritesheet_13
-      rect:
-        serializedVersion: 2
-        x: 640
-        y: 239
-        width: 128
-        height: 239
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline:
-      - - {x: -64, y: 119.5}
-        - {x: -64, y: -119.5}
-        - {x: 64, y: -119.5}
-        - {x: 64, y: 119.5}
-    - name: walkingspritesheet_14
-      rect:
-        serializedVersion: 2
-        x: 768
-        y: 239
-        width: 128
-        height: 239
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline:
-      - - {x: -64, y: 119.5}
-        - {x: -64, y: -119.5}
-        - {x: 64, y: -119.5}
-        - {x: 64, y: 119.5}
-    - name: walkingspritesheet_15
-      rect:
-        serializedVersion: 2
-        x: 896
-        y: 239
-        width: 128
-        height: 239
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline:
-      - - {x: -64, y: 119.5}
-        - {x: -64, y: -119.5}
-        - {x: 64, y: -119.5}
-        - {x: 64, y: 119.5}
-    - name: walkingspritesheet_16
-      rect:
-        serializedVersion: 2
-        x: 0
-        y: 0
-        width: 128
-        height: 239
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline:
-      - - {x: -64, y: 119.5}
-        - {x: -64, y: -119.5}
-        - {x: 64, y: -119.5}
-        - {x: 64, y: 119.5}
-    - name: walkingspritesheet_17
-      rect:
-        serializedVersion: 2
-        x: 128
-        y: 0
-        width: 128
-        height: 239
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline:
-      - - {x: -64, y: 119.5}
-        - {x: -64, y: -119.5}
-        - {x: 64, y: -119.5}
-        - {x: 64, y: 119.5}
-    - name: walkingspritesheet_18
-      rect:
-        serializedVersion: 2
-        x: 256
-        y: 0
-        width: 128
-        height: 239
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline:
-      - - {x: -64, y: 119.5}
-        - {x: -64, y: -119.5}
-        - {x: 64, y: -119.5}
-        - {x: 64, y: 119.5}
-    - name: walkingspritesheet_19
-      rect:
-        serializedVersion: 2
-        x: 384
-        y: 0
-        width: 128
-        height: 239
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline:
-      - - {x: -64, y: 119.5}
-        - {x: -64, y: -119.5}
-        - {x: 64, y: -119.5}
-        - {x: 64, y: 119.5}
-    - name: walkingspritesheet_20
-      rect:
-        serializedVersion: 2
-        x: 512
-        y: 0
-        width: 128
-        height: 239
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline:
-      - - {x: -64, y: 119.5}
-        - {x: -64, y: -119.5}
-        - {x: 64, y: -119.5}
-        - {x: 64, y: 119.5}
-    - name: walkingspritesheet_21
-      rect:
-        serializedVersion: 2
-        x: 640
-        y: 0
-        width: 128
-        height: 239
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline:
-      - - {x: -64, y: 119.5}
-        - {x: -64, y: -119.5}
-        - {x: 64, y: -119.5}
-        - {x: 64, y: 119.5}
-    - name: walkingspritesheet_22
-      rect:
-        serializedVersion: 2
-        x: 768
-        y: 0
-        width: 128
-        height: 239
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline:
-      - - {x: -64, y: 119.5}
-        - {x: -64, y: -119.5}
-        - {x: 64, y: -119.5}
-        - {x: 64, y: 119.5}
-    - name: walkingspritesheet_23
-      rect:
-        serializedVersion: 2
-        x: 896
-        y: 0
-        width: 128
-        height: 239
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline:
-      - - {x: -64, y: 119.5}
-        - {x: -64, y: -119.5}
-        - {x: 64, y: -119.5}
-        - {x: 64, y: 119.5}
+      - - {x: 24.5, y: -2.5}
+        - {x: 29.5, y: 27.5}
+        - {x: 29.5, y: 76.5}
+        - {x: 27.5, y: 87.5}
+        - {x: 21.5, y: 95.5}
+        - {x: -29.5, y: 95.5}
+        - {x: -29.5, y: -95.5}
+        - {x: 26.5, y: -95.5}
+        - {x: 26.5, y: -90.5}
+        - {x: 23.5, y: -85.5}
+        - {x: 24.5, y: -26.5}
     outline: []
   spritePackingTag: 
   userData: 
