@@ -9,9 +9,12 @@ public class GameManager : MonoBehaviour {
     public bool fallen;
     public bool hasCheckpoint;
     private GameObject[] respawns;
+    private AudioSource death;
 
 	// Use this for initialization
 	void Start () {
+        AudioSource[] audios = GetComponents<AudioSource>();
+        death = audios[0];
         FindCurrentPlayerObject();
         if(PlayerStats.Health < 0 || PlayerStats.Health > 3)
         {
@@ -31,6 +34,7 @@ public class GameManager : MonoBehaviour {
             PlayerStats.Health--;
             if(PlayerStats.Health > 0 && fallen)
             {
+                death.Play();
                 print("You have fallen");
                 Respawn();
             }

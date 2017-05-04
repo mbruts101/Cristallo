@@ -14,9 +14,14 @@ public class GainCrystalPower : MonoBehaviour {
     public bool purple;
 	public Sprite empty;
 	public Sprite redSprite;
+    public AudioSource collection;
+    public AudioSource depower;
     // Use this for initialization
     void Start () {
        cm = GameObject.FindGameObjectWithTag("CrystalManager").GetComponent<CrystalManager>();
+        AudioSource[] audios = GetComponents<AudioSource> ();
+		collection = audios [0];
+		depower = audios [1];
     }
 
     // Update is called once per frame
@@ -29,6 +34,7 @@ public class GainCrystalPower : MonoBehaviour {
 				SpriteRenderer sr = gameObject.GetComponent<SpriteRenderer>(); 
 				sr.sprite = empty;
                 active = false; red = false; orange = false; yellow = false; blue = false; green = false; purple = false;
+                collection.Play();
             }
             else if (NearCrystal == true && active == false)
             {
@@ -43,6 +49,7 @@ public class GainCrystalPower : MonoBehaviour {
                         returning = false;
 						SpriteRenderer sr = gameObject.GetComponent<SpriteRenderer>(); 
 						sr.sprite = redSprite;
+                        depower.Play();
                     }
                     if (PlayerStats.HasYellow && returning)
                     {

@@ -23,6 +23,9 @@ namespace UnityStandardAssets._2D
         private bool m_FacingRight = true;  // For determining which way the player is currently facing.
         public bool canDoubleJump = true;
 		private bool isSprinting = false;
+        private AudioSource walk;
+        private AudioSource jumping;
+        private AudioSource landing;
 
         private void Awake() 
         {
@@ -32,6 +35,9 @@ namespace UnityStandardAssets._2D
             m_Anim = GetComponent<Animator>();
             m_Rigidbody2D = GetComponent<Rigidbody2D>();
             cm = GameObject.FindGameObjectWithTag("CrystalManager").GetComponent<CrystalManager>();
+            AudioSource[] audios = GetComponents<AudioSource>();
+            walk = audios[0];
+            jumping = audios[1];
         }
 
 
@@ -65,6 +71,17 @@ namespace UnityStandardAssets._2D
             {
 					m_MaxSpeed = m_MaxSpeed / 1.5f;
 				    isSprinting = false;
+            }
+            if (Input.GetKeyDown(KeyCode.A) || Input.GetKeyDown(KeyCode.D))
+            {
+                if (m_Grounded)
+                {
+                    walk.Play();
+                }
+            }
+            if (Input.GetKeyUp(KeyCode.A) || Input.GetKeyUp(KeyCode.D))
+            {
+                walk.Stop();
             }
             if (Input.GetKeyDown(KeyCode.Q))
             {
@@ -115,17 +132,17 @@ namespace UnityStandardAssets._2D
         public void Move(float move, bool crouch, bool jump)
         {
             // If crouching, check to see if the character can stand up
-            if (!crouch && m_Anim.GetBool("Crouch"))
-            {
+            //if (!crouch && m_Anim.GetBool("Crouch"))
+            //{
                 // If the character has a ceiling preventing them from standing up, keep them crouching
-                if (Physics2D.OverlapCircle(m_CeilingCheck.position, k_CeilingRadius, m_WhatIsGround))
-                {
-                    crouch = true;
-                }
-            }
+            //    if (Physics2D.OverlapCircle(m_CeilingCheck.position, k_CeilingRadius, m_WhatIsGround))
+           //     {
+           //         crouch = true;
+           //     }
+          //  }
 
             // Set whether or not the character is crouching in the animator
-            m_Anim.SetBool("Crouch", crouch);
+         //   m_Anim.SetBool("Crouch", crouch);
 
             //only control the player if grounded or airControl is turned on
             if (m_Grounded || m_AirControl)
@@ -152,9 +169,12 @@ namespace UnityStandardAssets._2D
                     Flip();
                 }
             }
+
             // If the player should jump...
             if (m_Grounded && jump && m_Anim.GetBool("Ground"))
             {
+                
+                jumping.Play();
                 // Add a vertical force to the player.
                 m_Grounded = false;
                 m_Anim.SetBool("Ground", false);
@@ -168,12 +188,15 @@ namespace UnityStandardAssets._2D
             }
             else if (jump && canDoubleJump && PlayerStats.HasRed == true)
             {
+                jumping.Play();
                 canDoubleJump = false;
                 m_Rigidbody2D.AddForce(new Vector2(0f, m_JumpForce));
                 jumpcount--;
             }
             else if (jump && !m_Grounded && jumpcount > 0)
             {
+                
+                jumping.Play();
                 jumpcount--;
                 m_Rigidbody2D.AddForce(new Vector2(0f, m_JumpForce));
             }
