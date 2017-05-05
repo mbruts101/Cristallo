@@ -45,6 +45,9 @@ public class GameManager : MonoBehaviour {
             }
             else if (PlayerStats.Health == 0)
             {
+                PlayerStats.Health = 3;
+                PlayerStats.HasBlue = false;
+                PlayerStats.HasRed = false;
                 Application.LoadLevel(Application.loadedLevel);
             }
         }

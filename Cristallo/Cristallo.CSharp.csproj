@@ -80,6 +80,7 @@
     <Compile Include="Assets\crystalTrigger.cs" />
     <Compile Include="Assets\monsterTrigger.cs" />
     <Compile Include="Assets\platform.cs" />
+    <Compile Include="Assets\prompt.cs" />
     <Compile Include="Assets\switchScript.cs" />
   </ItemGroup>
   <ItemGroup>
