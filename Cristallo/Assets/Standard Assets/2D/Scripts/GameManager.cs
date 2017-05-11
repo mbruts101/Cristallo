@@ -50,15 +50,8 @@ public class GameManager : MonoBehaviour {
             else if (PlayerStats.Health == 0)
             {
                 death.Play();
-         
-                PlayerStats.Health = 4;
-                PlayerStats.HasBlue = false;
-                PlayerStats.HasRed = false;
-                PlayerStats.HasGreen = false;
-                PlayerStats.HasOrange = false;
-                PlayerStats.HasPurple = false;
-                PlayerStats.HasYellow = false;
-                Application.LoadLevel(Application.loadedLevel);
+                Destroy(player);
+                Invoke("RestartGame", 6);
             }
         }
     }
@@ -88,5 +81,17 @@ public class GameManager : MonoBehaviour {
             }
         }
         return closest;
+    }
+    public void RestartGame()
+    {
+        
+        PlayerStats.Health = 4;
+        PlayerStats.HasBlue = false;
+        PlayerStats.HasRed = false;
+        PlayerStats.HasGreen = false;
+        PlayerStats.HasOrange = false;
+        PlayerStats.HasPurple = false;
+        PlayerStats.HasYellow = false;
+        Application.LoadLevel(Application.loadedLevel);
     }
 }
