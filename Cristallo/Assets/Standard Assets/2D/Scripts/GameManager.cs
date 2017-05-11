@@ -48,6 +48,10 @@ public class GameManager : MonoBehaviour {
                 PlayerStats.Health = 3;
                 PlayerStats.HasBlue = false;
                 PlayerStats.HasRed = false;
+                PlayerStats.HasGreen = false;
+                PlayerStats.HasOrange = false;
+                PlayerStats.HasPurple = false;
+                PlayerStats.HasYellow = false;
                 Application.LoadLevel(Application.loadedLevel);
             }
         }

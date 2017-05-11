@@ -26,6 +26,8 @@ namespace UnityStandardAssets._2D
         private AudioSource walk;
         private AudioSource jumping;
         private AudioSource landing;
+        private bool small = false;
+        private Vector3 defaultScale;
 
         private void Awake() 
         {
@@ -38,6 +40,8 @@ namespace UnityStandardAssets._2D
             AudioSource[] audios = GetComponents<AudioSource>();
             walk = audios[0];
             jumping = audios[1];
+            defaultScale = new Vector3(transform.localScale.x, transform.localScale.y, transform.localScale.z);
+
         }
 
 
@@ -61,6 +65,7 @@ namespace UnityStandardAssets._2D
         }
         void Update()
         {
+            
             if (Input.GetKeyDown(KeyCode.LeftShift) && m_Grounded)
             {
 				isSprinting = true;
@@ -93,33 +98,51 @@ namespace UnityStandardAssets._2D
                         print("got double jump");
                         cm.red = false;
                     }
-                    if(cm.yellow == true)
+                    else if(cm.yellow == true)
                     {
                         PlayerStats.HasYellow = true;
                         cm.yellow = false;
                     }
-                    if(cm.orange == true)
+                    else if(cm.orange == true)
                     {
                         PlayerStats.HasOrange = true;
                         cm.orange = false;
                     }
-                    if(cm.green == true)
+                    else if(cm.green == true)
                     {
                         PlayerStats.HasGreen = true;
+                        print("Got Shrink");
                         cm.green = false;
                     }
-                    if(cm.blue == true)
+                    else if(cm.blue == true)
                     {
                         PlayerStats.HasBlue = true;
                         cm.blue = false;
                     }
-                    if(cm.purple == true)
+                    else if(cm.purple == true)
                     {
                         PlayerStats.HasPurple = true;
                         cm.purple = false;
                     }
                    
                     cm.hasPower = true;
+                }
+                if(cm.NearCrystal == false && PlayerStats.HasGreen && small == false)
+                {
+                    transform.localScale -= new Vector3(transform.localScale.x * 0.5f, transform.localScale.y * 0.5f, transform.localScale.z * 0.5f);
+                    small = true;
+                    PlayerStats.IsSmall = true;
+                }
+                else if (cm.NearCrystal == false && PlayerStats.HasGreen && small == true)
+                {
+                    transform.Translate(0f, 1f, 0f);
+                    transform.localScale = defaultScale;
+                    if (!m_FacingRight)
+                    {
+                        transform.localScale += new Vector3(-transform.localScale.x * 2, 0f, 0f);
+                    }
+                    small = false;
+                    PlayerStats.IsSmall = false;
                 }
             }
             if(m_Grounded && PlayerStats.HasRed)

@@ -51,31 +51,31 @@ public class GainCrystalPower : MonoBehaviour {
 						sr.sprite = redSprite;
                         depower.Play();
                     }
-                    if (PlayerStats.HasYellow && returning)
+                    else if (PlayerStats.HasYellow && returning)
                     {
                         PlayerStats.HasYellow = false;
                         yellow = true;
                         returning = false;
                     }
-                    if (PlayerStats.HasOrange && returning)
+                    else if (PlayerStats.HasOrange && returning)
                     {
                         PlayerStats.HasOrange = false;
                         orange = true;
                         returning = false;
                     }
-                    if (PlayerStats.HasGreen && returning)
+                    else if (PlayerStats.HasGreen && returning && PlayerStats.IsSmall == false)
                     {
                         PlayerStats.HasGreen = false;
                         green = true;
                         returning = false;
                     }
-                    if (PlayerStats.HasBlue && returning)
+                    else if (PlayerStats.HasBlue && returning)
                     {
                         PlayerStats.HasBlue = false;
                         blue = true;
                         returning = false;
                     }
-                    if (PlayerStats.HasPurple && returning)
+                    else if (PlayerStats.HasPurple && returning)
                     {
                         PlayerStats.HasPurple = false;
                         purple = true;
