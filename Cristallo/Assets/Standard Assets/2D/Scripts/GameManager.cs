@@ -10,11 +10,15 @@ public class GameManager : MonoBehaviour {
     public bool hasCheckpoint;
     private GameObject[] respawns;
     private AudioSource death;
+    private AudioSource ambience;
+    private AudioSource injury;
 
 	// Use this for initialization
 	void Start () {
         AudioSource[] audios = GetComponents<AudioSource>();
         death = audios[0];
+        ambience = audios[1];
+        injury = audios[2];
         FindCurrentPlayerObject();
         if(PlayerStats.Health < 0 || PlayerStats.Health > 3)
         {
@@ -34,7 +38,7 @@ public class GameManager : MonoBehaviour {
             PlayerStats.Health--;
             if(PlayerStats.Health > 0 && fallen)
             {
-                death.Play();
+                injury.Play();
                 print("You have fallen");
                 Respawn();
             }
@@ -45,14 +49,9 @@ public class GameManager : MonoBehaviour {
             }
             else if (PlayerStats.Health == 0)
             {
-                PlayerStats.Health = 3;
-                PlayerStats.HasBlue = false;
-                PlayerStats.HasRed = false;
-                PlayerStats.HasGreen = false;
-                PlayerStats.HasOrange = false;
-                PlayerStats.HasPurple = false;
-                PlayerStats.HasYellow = false;
-                Application.LoadLevel(Application.loadedLevel);
+                death.Play();
+                Destroy(player);
+                Invoke("RestartGame", 6);
             }
         }
     }
@@ -82,5 +81,17 @@ public class GameManager : MonoBehaviour {
             }
         }
         return closest;
+    }
+    public void RestartGame()
+    {
+        
+        PlayerStats.Health = 4;
+        PlayerStats.HasBlue = false;
+        PlayerStats.HasRed = false;
+        PlayerStats.HasGreen = false;
+        PlayerStats.HasOrange = false;
+        PlayerStats.HasPurple = false;
+        PlayerStats.HasYellow = false;
+        Application.LoadLevel(Application.loadedLevel);
     }
 }

@@ -3,8 +3,8 @@ using System.Collections;
 
 public static class PlayerStats
 {
-    private static int health = 3;
-    private static bool hasRed, hasYellow, hasOrange, hasGreen, hasBlue, hasPurple, isSmall;
+    private static int health = 4;
+    private static bool hasRed, hasYellow, hasOrange, hasGreen, hasBlue, hasPurple, isSmall, hasPower;
     
 
     public static int Health
@@ -108,6 +108,19 @@ public static class PlayerStats
         set
         {
             isSmall = value;
+        }
+    }
+
+    public static bool HasPower
+    {
+        get
+        {
+            return hasPower;
+        }
+
+        set
+        {
+            hasPower = value;
         }
     }
 }

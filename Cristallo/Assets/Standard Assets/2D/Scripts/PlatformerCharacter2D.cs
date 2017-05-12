@@ -27,6 +27,7 @@ namespace UnityStandardAssets._2D
         private AudioSource walk;
         private AudioSource jumping;
         private AudioSource landing;
+        private AudioSource emptypower;
         private bool small = false;
         private Vector3 defaultScale;
 
@@ -41,6 +42,8 @@ namespace UnityStandardAssets._2D
             AudioSource[] audios = GetComponents<AudioSource>();
             walk = audios[0];
             jumping = audios[1];
+            landing = audios[2];
+            emptypower = audios[3];
             defaultScale = new Vector3(transform.localScale.x, transform.localScale.y, transform.localScale.z);
 
         }
@@ -91,6 +94,10 @@ namespace UnityStandardAssets._2D
             }
             if (Input.GetKeyDown(KeyCode.Q))
             {
+                if(PlayerStats.HasPower == false && cm.NearCrystal == false)
+                {
+                    emptypower.Play();
+                }
                 if (cm.NearCrystal == true)
                 {
                     if (cm.red == true)
