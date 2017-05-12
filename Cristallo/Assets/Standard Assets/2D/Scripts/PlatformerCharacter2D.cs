@@ -22,6 +22,7 @@ namespace UnityStandardAssets._2D
         private Rigidbody2D m_Rigidbody2D;
         private bool m_FacingRight = true;  // For determining which way the player is currently facing.
         public bool canDoubleJump = true;
+		public float greenSize = 0.5f;
 		private bool isSprinting = false;
         private AudioSource walk;
         private AudioSource jumping;
@@ -129,7 +130,7 @@ namespace UnityStandardAssets._2D
                 }
                 if(cm.NearCrystal == false && PlayerStats.HasGreen && small == false)
                 {
-                    transform.localScale -= new Vector3(transform.localScale.x * 0.5f, transform.localScale.y * 0.5f, transform.localScale.z * 0.5f);
+                    transform.localScale -= new Vector3(transform.localScale.x * greenSize, transform.localScale.y * greenSize, transform.localScale.z * greenSize);
                     small = true;
                     PlayerStats.IsSmall = true;
                 }
