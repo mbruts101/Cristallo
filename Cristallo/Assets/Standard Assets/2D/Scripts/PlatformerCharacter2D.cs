@@ -27,9 +27,9 @@ namespace UnityStandardAssets._2D
         private AudioSource walk;
         private AudioSource jumping;
         private AudioSource landing;
-        private AudioSource emptypower;
         private bool small = false;
         private Vector3 defaultScale;
+        public AudioSource emptypower;
 
         private void Awake() 
         {
@@ -69,7 +69,11 @@ namespace UnityStandardAssets._2D
         }
         void Update()
         {
-            
+            if (PlayerStats.HasPower == false && cm.NearCrystal == false)
+            {
+                emptypower.Play();
+            }
+
             if (Input.GetKeyDown(KeyCode.LeftShift) && m_Grounded)
             {
 				isSprinting = true;
@@ -94,47 +98,8 @@ namespace UnityStandardAssets._2D
             }
             if (Input.GetKeyDown(KeyCode.Q))
             {
-                if(PlayerStats.HasPower == false && cm.NearCrystal == false)
-                {
-                    emptypower.Play();
-                }
-                if (cm.NearCrystal == true)
-                {
-                    if (cm.red == true)
-                    {
-                        PlayerStats.HasRed = true;
-                        print("got double jump");
-                        cm.red = false;
-                    }
-                    else if(cm.yellow == true)
-                    {
-                        PlayerStats.HasYellow = true;
-                        cm.yellow = false;
-                    }
-                    else if(cm.orange == true)
-                    {
-                        PlayerStats.HasOrange = true;
-                        cm.orange = false;
-                    }
-                    else if(cm.green == true)
-                    {
-                        PlayerStats.HasGreen = true;
-                        print("Got Shrink");
-                        cm.green = false;
-                    }
-                    else if(cm.blue == true)
-                    {
-                        PlayerStats.HasBlue = true;
-                        cm.blue = false;
-                    }
-                    else if(cm.purple == true)
-                    {
-                        PlayerStats.HasPurple = true;
-                        cm.purple = false;
-                    }
-                   
-                    cm.hasPower = true;
-                }
+               
+               
                 if(cm.NearCrystal == false && PlayerStats.HasGreen && small == false)
                 {
                     transform.localScale -= new Vector3(transform.localScale.x * greenSize, transform.localScale.y * greenSize, transform.localScale.z * greenSize);

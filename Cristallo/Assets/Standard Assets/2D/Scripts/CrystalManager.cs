@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 using System.Collections;
+using System.Collections.Generic;
 
 public class CrystalManager : MonoBehaviour {
     public bool NearCrystal;
@@ -10,11 +11,12 @@ public class CrystalManager : MonoBehaviour {
     public bool green;
     public bool blue;
     public bool purple;
-    public bool hasPower;
+    public List<string> ColorManager;
     // Use this for initialization
     void Start () {
-	
-	}
+        ColorManager = new List<string>();
+
+    }
 	
 	// Update is called once per frame
 	void Update () {

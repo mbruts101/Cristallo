@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 using System.Collections;
+using System.Collections.Generic;
 
 public class GainCrystalPower : MonoBehaviour {
     CrystalManager cm; 
@@ -16,6 +17,7 @@ public class GainCrystalPower : MonoBehaviour {
 	public Sprite redSprite;
     public AudioSource collection;
     public AudioSource depower;
+
     // Use this for initialization
     void Start () {
        cm = GameObject.FindGameObjectWithTag("CrystalManager").GetComponent<CrystalManager>();
@@ -29,17 +31,61 @@ public class GainCrystalPower : MonoBehaviour {
     {
         if (Input.GetKeyDown(KeyCode.Q))
         {
-            if (NearCrystal == true && active == true)
+            //Taking a Power
+            if (NearCrystal == true && active == true && PlayerStats.HasPower == false)
             {
-				SpriteRenderer sr = gameObject.GetComponent<SpriteRenderer>(); 
-				sr.sprite = empty;
-                active = false; red = false; orange = false; yellow = false; blue = false; green = false; purple = false;
+                SpriteRenderer sr = gameObject.GetComponent<SpriteRenderer>();
+                sr.sprite = empty;
                 collection.Play();
+
+                if (cm.NearCrystal == true)
+                {
+                    if (cm.red == true)
+                    {
+                        PlayerStats.HasRed = true;
+                        print("got double jump");
+                        cm.red = false;
+                        cm.ColorManager.Add("red");
+                    }
+                    else if (cm.yellow == true)
+                    {
+                        PlayerStats.HasYellow = true;
+                        cm.yellow = false;
+                    }
+                    else if (cm.orange == true)
+                    {
+                        PlayerStats.HasOrange = true;
+                        cm.orange = false;
+                    }
+                    else if (cm.green == true)
+                    {
+                        PlayerStats.HasGreen = true;
+                        print("Got Shrink");
+                        cm.green = false;
+                        cm.ColorManager.Add("green");
+                    }
+                    else if (cm.blue == true)
+                    {
+                        PlayerStats.HasBlue = true;
+                        cm.blue = false;
+                    }
+                    else if (cm.purple == true)
+                    {
+                        PlayerStats.HasPurple = true;
+                        print("has gravity shift");
+                        cm.purple = false;
+                        cm.ColorManager.Add("purple");
+                    }
+                    active = false; red = false; orange = false; yellow = false; blue = false; green = false; purple = false;
+                    PlayerStats.HasPower = true;
+                    print(cm.ColorManager[0]);
+                }
             }
+            //Returning Power to Empty Crystal
             else if (NearCrystal == true && active == false)
             {
                 returning = true;
-                if (cm.hasPower == true)
+                if (PlayerStats.HasPower == true)
                 {
                     print("returning power");
                     if (PlayerStats.HasRed && returning)
@@ -47,8 +93,8 @@ public class GainCrystalPower : MonoBehaviour {
                         PlayerStats.HasRed = false;
                         red = true;
                         returning = false;
-						SpriteRenderer sr = gameObject.GetComponent<SpriteRenderer>(); 
-						sr.sprite = redSprite;
+                        SpriteRenderer sr = gameObject.GetComponent<SpriteRenderer>();
+                        sr.sprite = redSprite;
                         depower.Play();
                     }
                     else if (PlayerStats.HasYellow && returning)
@@ -81,9 +127,57 @@ public class GainCrystalPower : MonoBehaviour {
                         purple = true;
                         returning = false;
                     }
+                    PlayerStats.HasPower = false;
                     active = true;
                 }
             }
+            //Swapping Powers
+            else if(NearCrystal == true && active == true && PlayerStats.HasPower == true)
+            {
+                if (cm.red)
+                {
+                    cm.ColorManager.Add("red");
+                    PlayerStats.HasRed = true;
+                    red = false;
+                    cm.red = false;
+                }
+                else if (cm.purple)
+                {
+                    cm.ColorManager.Add("purple");
+                    PlayerStats.HasPurple = true;
+                    purple = false;
+                    cm.purple = false;
+                }
+                else if (cm.green)
+                {
+                    cm.ColorManager.Add("green");
+                    PlayerStats.HasGreen = true;
+                    green = false;
+                    cm.green = false;
+                }
+                print(cm.ColorManager[0]);
+                print(cm.ColorManager[1]);
+                switch (cm.ColorManager[0])
+                {
+                    case "red":
+                        red = true;
+                        PlayerStats.HasRed = false;
+                        break;
+                    case "green":
+                        green = true;
+                        PlayerStats.HasGreen = false;
+                        break;
+                    case "purple":
+                        PlayerStats.HasPurple = false;
+                        purple = true;
+                        break;
+
+                }
+                cm.ColorManager[0] = cm.ColorManager[1];
+                cm.ColorManager.RemoveAt(1);
+
+            }
+            
         }
     }
     void OnTriggerEnter2D(Collider2D col)
