@@ -20,9 +20,9 @@ public class GameManager : MonoBehaviour {
         ambience = audios[1];
         injury = audios[2];
         FindCurrentPlayerObject();
-        if(PlayerStats.Health < 0 || PlayerStats.Health > 3)
+        if(PlayerStats.Health < 0 || PlayerStats.Health > 4)
         {
-            PlayerStats.Health = 3;
+            PlayerStats.Health = 4;
         }
 	}
 	

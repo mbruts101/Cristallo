@@ -27,9 +27,12 @@ namespace UnityStandardAssets._2D
         private AudioSource walk;
         private AudioSource jumping;
         private AudioSource landing;
+        private AudioSource emptypower;
         private bool small = false;
         private Vector3 defaultScale;
-        public AudioSource emptypower;
+        private bool gShifted = false;
+        
+        Vector3 gravity;
 
         private void Awake() 
         {
@@ -45,7 +48,7 @@ namespace UnityStandardAssets._2D
             landing = audios[2];
             emptypower = audios[3];
             defaultScale = new Vector3(transform.localScale.x, transform.localScale.y, transform.localScale.z);
-
+            gravity = Physics2D.gravity;
         }
 
 
@@ -65,7 +68,8 @@ namespace UnityStandardAssets._2D
 
             // Set the vertical animation
             m_Anim.SetFloat("vSpeed", m_Rigidbody2D.velocity.y);
-       
+            
+
         }
         void Update()
         {
@@ -116,6 +120,21 @@ namespace UnityStandardAssets._2D
                     }
                     small = false;
                     PlayerStats.IsSmall = false;
+                }
+                print("pressing q");
+                if(cm.NearCrystal == false && PlayerStats.HasPurple == true && m_Grounded && !gShifted)
+                {
+                    print("changing gravity");
+                    Physics2D.gravity *= -1;
+                    transform.Rotate(180, 0, 0);
+                    gShifted = true;
+                }
+                else if (cm.NearCrystal == false && PlayerStats.HasPurple == true && m_Grounded && gShifted)
+                {
+                    print("changing gravity");
+                    Physics2D.gravity *= -1;
+                    transform.Rotate(-180, 0, 0);
+                    gShifted = false;
                 }
             }
             if(m_Grounded && PlayerStats.HasRed)
@@ -181,6 +200,12 @@ namespace UnityStandardAssets._2D
                 }
                 jumpcount--;
 
+            }
+            if(m_Grounded && jump && gShifted)
+            {
+                m_Grounded = false;
+                m_Anim.SetBool("Ground", false);
+                m_Rigidbody2D.AddForce(new Vector2(0f, -m_JumpForce));
             }
             else if (jump && canDoubleJump && PlayerStats.HasRed == true)
             {
