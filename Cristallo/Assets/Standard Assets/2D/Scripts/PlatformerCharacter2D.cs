@@ -31,6 +31,7 @@ namespace UnityStandardAssets._2D
         private bool small = false;
         private Vector3 defaultScale;
         private bool gShifted = false;
+        private Quaternion defaultRotation;
         
         Vector3 gravity;
 
@@ -49,6 +50,7 @@ namespace UnityStandardAssets._2D
             emptypower = audios[3];
             defaultScale = new Vector3(transform.localScale.x, transform.localScale.y, transform.localScale.z);
             gravity = Physics2D.gravity;
+            defaultRotation = transform.rotation;
         }
 
 
@@ -122,19 +124,29 @@ namespace UnityStandardAssets._2D
                     PlayerStats.IsSmall = false;
                 }
                 print("pressing q");
-                if(cm.NearCrystal == false && PlayerStats.HasPurple == true && m_Grounded && !gShifted)
+                
+                if (cm.NearCrystal == false && PlayerStats.HasPurple == true && m_Grounded && gShifted)
                 {
                     print("changing gravity");
                     Physics2D.gravity *= -1;
-                    transform.Rotate(180, 0, 0);
-                    gShifted = true;
-                }
-                else if (cm.NearCrystal == false && PlayerStats.HasPurple == true && m_Grounded && gShifted)
-                {
-                    print("changing gravity");
-                    Physics2D.gravity *= -1;
-                    transform.Rotate(-180, 0, 0);
+                    transform.Rotate(0f, 0f, 180f);
+                    //transform.rotation = defaultRotation;
+                    if (m_FacingRight)
+                    {
+                        transform.localScale += new Vector3(-transform.localScale.x * 2, 0f, 0f);
+                    }
                     gShifted = false;
+                }
+                else if (cm.NearCrystal == false && PlayerStats.HasPurple == true && m_Grounded && !gShifted)
+                {
+                    print("changing gravity");
+                    Physics2D.gravity *= -1;
+                    transform.Rotate(0f, 0f, 180f);
+                    gShifted = true;
+                    if (!m_FacingRight)
+                    {
+                        transform.localScale += new Vector3(-transform.localScale.x * 2, 0f, 0f);
+                    }
                 }
             }
             if(m_Grounded && PlayerStats.HasRed)
@@ -183,6 +195,7 @@ namespace UnityStandardAssets._2D
                     // ... flip the player.
                     Flip();
                 }
+                
             }
 
             // If the player should jump...
@@ -201,12 +214,12 @@ namespace UnityStandardAssets._2D
                 jumpcount--;
 
             }
-            if(m_Grounded && jump && gShifted)
-            {
-                m_Grounded = false;
-                m_Anim.SetBool("Ground", false);
-                m_Rigidbody2D.AddForce(new Vector2(0f, -m_JumpForce));
-            }
+           // if(m_Grounded && jump && gShifted == true && PlayerStats.HasPurple == false)
+            //{
+          //      m_Grounded = false;
+          //      m_Anim.SetBool("Ground", false);
+          //      m_Rigidbody2D.AddForce(new Vector2(0f, -m_JumpForce));
+          //  }
             else if (jump && canDoubleJump && PlayerStats.HasRed == true)
             {
                 jumping.Play();
