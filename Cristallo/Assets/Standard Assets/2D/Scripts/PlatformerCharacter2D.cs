@@ -75,10 +75,7 @@ namespace UnityStandardAssets._2D
         }
         void Update()
         {
-            if (PlayerStats.HasPower == false && cm.NearCrystal == false)
-            {
-                emptypower.Play();
-            }
+            
 
             if (Input.GetKeyDown(KeyCode.LeftShift) && m_Grounded)
             {
@@ -104,9 +101,12 @@ namespace UnityStandardAssets._2D
             }
             if (Input.GetKeyDown(KeyCode.Q))
             {
-               
-               
-                if(cm.NearCrystal == false && PlayerStats.HasGreen && small == false)
+                if (PlayerStats.HasPower == false && cm.NearCrystal == false)
+                {
+                    emptypower.Play();
+                }
+
+                if (cm.NearCrystal == false && PlayerStats.HasGreen && small == false)
                 {
                     transform.localScale -= new Vector3(transform.localScale.x * greenSize, transform.localScale.y * greenSize, transform.localScale.z * greenSize);
                     small = true;
