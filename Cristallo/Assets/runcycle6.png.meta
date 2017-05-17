@@ -1,0 +1,326 @@
+fileFormatVersion: 2
+guid: bc31bacb44c9a450eacf0d983ef70049
+timeCreated: 1495043152
+licenseType: Free
+TextureImporter:
+  fileIDToRecycleName:
+    21300000: runcycle6_0
+    21300002: runcycle6_1
+    21300004: runcycle6_2
+    21300006: runcycle6_3
+    21300008: runcycle6_4
+    21300010: runcycle6_5
+    21300012: runcycle6_6
+    21300014: runcycle6_7
+    21300016: runcycle6_8
+    21300018: runcycle6_9
+    21300020: runcycle6_10
+    21300022: runcycle6_11
+    21300024: runcycle6_12
+    21300026: runcycle6_13
+  serializedVersion: 2
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 1
+    linearTexture: 0
+    correctGamma: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 0
+  cubemapConvolution: 0
+  cubemapConvolutionSteps: 7
+  cubemapConvolutionExponent: 1.5
+  seamlessCubemap: 0
+  textureFormat: -1
+  maxTextureSize: 2048
+  textureSettings:
+    filterMode: -1
+    aniso: 16
+    mipBias: -1
+    wrapMode: 1
+  nPOTScale: 0
+  lightmap: 0
+  rGBM: 0
+  compressionQuality: 50
+  allowsAlphaSplitting: 0
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spritePixelsToUnits: 100
+  alphaIsTransparency: 1
+  textureType: 8
+  buildTargetSettings: []
+  spriteSheet:
+    sprites:
+    - name: runcycle6_0
+      rect:
+        serializedVersion: 2
+        x: 27
+        y: 286
+        width: 84
+        height: 200
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -17.168571, y: 98.91809}
+        - {x: -38.16857, y: 70.91809}
+        - {x: -41.16857, y: 54.91809}
+        - {x: -41.16857, y: -97.08191}
+        - {x: 41.83143, y: -97.08191}
+        - {x: 41.83143, y: 89.91809}
+        - {x: 31.831429, y: 98.91809}
+    - name: runcycle6_1
+      rect:
+        serializedVersion: 2
+        x: 115
+        y: 284
+        width: 83
+        height: 201
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -38.84762, y: 99.46762}
+        - {x: -40.84762, y: 93.46762}
+        - {x: -40.84762, y: -91.53238}
+        - {x: -33.84762, y: -92.53238}
+        - {x: -24.847618, y: -80.53238}
+        - {x: 0.1523819, y: -97.53238}
+        - {x: 39.15238, y: -97.53238}
+        - {x: 41.15238, y: -95.53238}
+        - {x: 41.15238, y: 99.46762}
+    - name: runcycle6_2
+      rect:
+        serializedVersion: 2
+        x: 217
+        y: 274
+        width: 65
+        height: 201
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -31.873337, y: 86.71524}
+        - {x: -31.873337, y: -98.28476}
+        - {x: 30.126663, y: -98.28476}
+        - {x: 33.126663, y: -96.28476}
+        - {x: 33.126663, y: 84.71524}
+        - {x: 22.126663, y: 98.71524}
+        - {x: -4.873337, y: 98.71524}
+        - {x: -26.873337, y: 92.71524}
+    - name: runcycle6_3
+      rect:
+        serializedVersion: 2
+        x: 301
+        y: 272
+        width: 60
+        height: 202
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -29.453339, y: 99.26477}
+        - {x: -29.453339, y: -98.73523}
+        - {x: 30.546661, y: -98.73523}
+        - {x: 30.546661, y: 81.26477}
+        - {x: 27.546661, y: 99.26477}
+    - name: runcycle6_4
+      rect:
+        serializedVersion: 2
+        x: 391
+        y: 274
+        width: 53
+        height: 205
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -26.181915, y: 100.71524}
+        - {x: -26.181915, y: -100.28476}
+        - {x: 23.818085, y: -100.28476}
+        - {x: 26.818085, y: -85.28476}
+        - {x: 26.818085, y: 100.71524}
+    - name: runcycle6_5
+      rect:
+        serializedVersion: 2
+        x: 473
+        y: 276
+        width: 68
+        height: 201
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -33.21237, y: 98.66571}
+        - {x: -33.21237, y: -85.33429}
+        - {x: -26.212372, y: -98.33429}
+        - {x: 33.78763, y: -98.33429}
+        - {x: 33.78763, y: 98.66571}
+    - name: runcycle6_6
+      rect:
+        serializedVersion: 2
+        x: 553
+        y: 290
+        width: 91
+        height: 189
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -36.69336, y: 93.81903}
+        - {x: -44.69336, y: 61.81903}
+        - {x: -44.69336, y: -58.18097}
+        - {x: -30.69336, y: -92.18097}
+        - {x: 45.30664, y: -92.18097}
+        - {x: 45.30664, y: 30.81903}
+        - {x: 37.30664, y: 93.81903}
+    - name: runcycle6_7
+      rect:
+        serializedVersion: 2
+        x: 28
+        y: 70
+        width: 83
+        height: 200
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -32.693333, y: 98.26666}
+        - {x: -40.693333, y: 64.26666}
+        - {x: -40.693333, y: -97.73334}
+        - {x: 41.306667, y: -97.73334}
+        - {x: 41.306667, y: 98.26666}
+    - name: runcycle6_8
+      rect:
+        serializedVersion: 2
+        x: 115
+        y: 68
+        width: 83
+        height: 200
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 41.15238, y: 73.31619}
+        - {x: 41.15238, y: 81.31619}
+        - {x: 21.152382, y: 98.31619}
+        - {x: -35.84762, y: 98.31619}
+        - {x: -40.84762, y: 56.316193}
+        - {x: -40.84762, y: -97.68381}
+        - {x: 41.15238, y: -97.68381}
+        - {x: 41.15238, y: -39.683807}
+        - {x: 37.15238, y: -15.683807}
+    - name: runcycle6_9
+      rect:
+        serializedVersion: 2
+        x: 217
+        y: 57
+        width: 65
+        height: 201
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -31.873337, y: 99.08857}
+        - {x: -31.873337, y: -97.91143}
+        - {x: 33.126663, y: -97.91143}
+        - {x: 33.126663, y: 99.08857}
+    - name: runcycle6_10
+      rect:
+        serializedVersion: 2
+        x: 301
+        y: 56
+        width: 60
+        height: 202
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -29.453339, y: 99.613335}
+        - {x: -29.453339, y: -53.386665}
+        - {x: -27.453339, y: -95.386665}
+        - {x: -15.453339, y: -98.386665}
+        - {x: 30.546661, y: -98.386665}
+        - {x: 30.546661, y: 97.613335}
+        - {x: 28.546661, y: 99.613335}
+    - name: runcycle6_11
+      rect:
+        serializedVersion: 2
+        x: 391
+        y: 57
+        width: 55
+        height: 206
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -26.681915, y: 101.58857}
+        - {x: -26.681915, y: -64.41143}
+        - {x: -6.6819153, y: -100.41143}
+        - {x: 18.318085, y: -100.41143}
+        - {x: 20.318085, y: -99.41143}
+        - {x: 27.318085, y: -77.41143}
+        - {x: 27.318085, y: 101.58857}
+    - name: runcycle6_12
+      rect:
+        serializedVersion: 2
+        x: 473
+        y: 60
+        width: 68
+        height: 201
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 28.787628, y: 99.01428}
+        - {x: -15.212372, y: 99.01428}
+        - {x: -33.21237, y: 81.01428}
+        - {x: -33.21237, y: -81.98572}
+        - {x: -20.212372, y: -97.98572}
+        - {x: 5.787628, y: -97.98572}
+        - {x: 3.7876282, y: -91.98572}
+        - {x: 33.78763, y: -93.98572}
+        - {x: 33.78763, y: 93.01428}
+    - name: runcycle6_13
+      rect:
+        serializedVersion: 2
+        x: 553
+        y: 73
+        width: 91
+        height: 190
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 45.30664, y: 9.192383}
+        - {x: 23.30664, y: 93.19238}
+        - {x: -22.69336, y: 93.19238}
+        - {x: -30.69336, y: 69.19238}
+        - {x: -28.69336, y: 57.192383}
+        - {x: -44.69336, y: 10.192383}
+        - {x: -44.69336, y: -16.807617}
+        - {x: -36.69336, y: -24.807617}
+        - {x: -30.69336, y: -23.807617}
+        - {x: -34.69336, y: -68.80762}
+        - {x: -27.69336, y: -92.80762}
+        - {x: -18.69336, y: -92.80762}
+        - {x: 19.30664, y: -88.80762}
+        - {x: 45.30664, y: -80.80762}
+    outline: []
+  spritePackingTag: 
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
