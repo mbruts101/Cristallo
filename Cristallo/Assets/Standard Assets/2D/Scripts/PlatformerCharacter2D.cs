@@ -86,8 +86,14 @@ namespace UnityStandardAssets._2D
 
             if (PlayerStats.HasDied)
             {
-                Physics2D.gravity = gravity;
+                Physics2D.gravity = PlayerStats.Gravity;
                 PlayerStats.HasDied = false;
+                transform.rotation = defaultRotation;
+                if (gShifted)
+                {
+                    transform.localScale += new Vector3(-transform.localScale.x * 2, 0f, 0f);
+                    gShifted = false;
+                }
             }
             if (Input.GetKeyDown(KeyCode.LeftShift) && m_Grounded)
             {

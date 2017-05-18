@@ -12,6 +12,9 @@ public class GameManager : MonoBehaviour {
     private AudioSource death;
     private AudioSource ambience;
     private AudioSource injury;
+    public GameObject life1;
+    public GameObject life2;
+    public GameObject life3;
 
 	// Use this for initialization
 	void Start () {
@@ -50,11 +53,13 @@ public class GameManager : MonoBehaviour {
             }
             else if (PlayerStats.Health == 0)
             {
+                PlayerStats.HasDied = true;
                 death.Play();
                 Destroy(player);
                 Invoke("RestartGame", 6);
             }
         }
+        UpdateLife();
     }
     public void Respawn()
     {
@@ -93,5 +98,26 @@ public class GameManager : MonoBehaviour {
         PlayerStats.HasPurple = false;
         PlayerStats.HasYellow = false;
         Application.LoadLevel(Application.loadedLevel);
+    }
+    public void UpdateLife()
+    {
+        if (PlayerStats.Health == 3)
+        {
+            life1.SetActive(true);
+            life2.SetActive(true);
+            life3.SetActive(true);
+        }
+        else if (PlayerStats.Health == 2)
+        {
+            life3.SetActive(false);
+        }
+        else if (PlayerStats.Health == 1)
+        {
+            life2.SetActive(false);
+        }
+        else if (PlayerStats.Health == 0)
+        {
+            life1.SetActive(false);
+        }
     }
 }

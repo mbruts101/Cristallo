@@ -6,6 +6,7 @@ public static class PlayerStats
     private static int health = 3;
     private static bool hasRed, hasYellow, hasOrange, hasGreen, hasBlue, hasPurple, isSmall, hasPower, canGrow;
     private static bool hasDied = false;
+    private static Vector3 gravity = Physics2D.gravity;
     
 
     public static int Health
@@ -148,6 +149,19 @@ public static class PlayerStats
         set
         {
             canGrow = value;
+        }
+    }
+
+    public static Vector3 Gravity
+    {
+        get
+        {
+            return gravity;
+        }
+
+        set
+        {
+            gravity = value;
         }
     }
 }
