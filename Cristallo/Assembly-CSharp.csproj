@@ -47,6 +47,7 @@
   <ItemGroup>
      <Compile Include="Assets\ActiveSpawn.cs" />
      <Compile Include="Assets\bounceScript.cs" />
+     <Compile Include="Assets\monster2.cs" />
      <None Include="Assets\ADD_ASSETS_HERE.txt" />
      <None Include="Assets\Standard Assets\CrossPlatformInput\CrossPlatformInputGuidelines.txt" />
  <Reference Include="UnityEngine.UI">
