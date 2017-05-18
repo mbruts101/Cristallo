@@ -130,7 +130,7 @@ namespace UnityStandardAssets._2D
                     small = true;
                     PlayerStats.IsSmall = true;
                 }
-                else if (cm.NearCrystal == false && PlayerStats.HasGreen && small == true && !PlayerStats.CanGrow)
+                else if (cm.NearCrystal == false && PlayerStats.HasGreen && small == true && PlayerStats.CanGrow == true)
                 {
                     transform.Translate(0f, 1f, 0f);
                     transform.localScale = defaultScale;

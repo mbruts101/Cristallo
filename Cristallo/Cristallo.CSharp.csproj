@@ -72,7 +72,13 @@
     <Compile Include="Assets\ActiveSpawn.cs" />
     <Compile Include="Assets\DetermineIfGrow.cs" />
     <Compile Include="Assets\HudScript.cs" />
+    <Compile Include="Assets\KillFix.cs" />
+    <Compile Include="Assets\Level3.cs" />
+    <Compile Include="Assets\LevelChange.cs" />
+    <Compile Include="Assets\WinScript.cs" />
     <Compile Include="Assets\bounceScript.cs" />
+    <Compile Include="Assets\box.cs" />
+    <Compile Include="Assets\fade.cs" />
     <Compile Include="Assets\monster2.cs" />
   </ItemGroup>
   <ItemGroup>
