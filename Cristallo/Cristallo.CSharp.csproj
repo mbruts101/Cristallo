@@ -77,6 +77,7 @@
   <ItemGroup>
     <Compile Include="Assets\ActiveSpawn.cs" />
     <Compile Include="Assets\bounceScript.cs" />
+    <Compile Include="Assets\monster2.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\ADD_ASSETS_HERE.txt" />
