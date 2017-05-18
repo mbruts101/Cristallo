@@ -137,11 +137,8 @@ namespace UnityStandardAssets._2D
                     print("changing gravity");
                     Physics2D.gravity *= -1;
                     transform.Rotate(0f, 0f, 180f);
-                    //transform.rotation = defaultRotation;
-                    if (m_FacingRight)
-                    {
-                        transform.localScale += new Vector3(-transform.localScale.x * 2, 0f, 0f);
-                    }
+                    transform.rotation = defaultRotation;
+                    transform.localScale += new Vector3(-transform.localScale.x * 2, 0f, 0f);
                     gShifted = false;
                 }
                 else if (cm.NearCrystal == false && PlayerStats.HasPurple == true && m_Grounded && !gShifted)
@@ -150,10 +147,7 @@ namespace UnityStandardAssets._2D
                     Physics2D.gravity *= -1;
                     transform.Rotate(0f, 0f, 180f);
                     gShifted = true;
-                    if (!m_FacingRight)
-                    {
-                        transform.localScale += new Vector3(-transform.localScale.x * 2, 0f, 0f);
-                    }
+                    transform.localScale += new Vector3(-transform.localScale.x * 2, 0f, 0f);
                 }
             }
             if(m_Grounded && PlayerStats.HasRed)
