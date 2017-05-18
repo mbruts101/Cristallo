@@ -20,9 +20,9 @@ public class GameManager : MonoBehaviour {
         ambience = audios[1];
         injury = audios[2];
         FindCurrentPlayerObject();
-        if(PlayerStats.Health < 0 || PlayerStats.Health > 4)
+        if(PlayerStats.Health < 0 || PlayerStats.Health > 3)
         {
-            PlayerStats.Health = 4;
+            PlayerStats.Health = 3;
         }
 	}
 	
@@ -38,6 +38,7 @@ public class GameManager : MonoBehaviour {
             PlayerStats.Health--;
             if(PlayerStats.Health > 0 && fallen)
             {
+                PlayerStats.HasDied = true;
                 injury.Play();
                 print("You have fallen");
                 Respawn();
@@ -84,8 +85,7 @@ public class GameManager : MonoBehaviour {
     }
     public void RestartGame()
     {
-        
-        PlayerStats.Health = 4;
+        PlayerStats.Health = 3;
         PlayerStats.HasBlue = false;
         PlayerStats.HasRed = false;
         PlayerStats.HasGreen = false;

@@ -3,8 +3,9 @@ using System.Collections;
 
 public static class PlayerStats
 {
-    private static int health = 4;
-    private static bool hasRed, hasYellow, hasOrange, hasGreen, hasBlue, hasPurple, isSmall, hasPower;
+    private static int health = 3;
+    private static bool hasRed, hasYellow, hasOrange, hasGreen, hasBlue, hasPurple, isSmall, hasPower, canGrow;
+    private static bool hasDied = false;
     
 
     public static int Health
@@ -121,6 +122,32 @@ public static class PlayerStats
         set
         {
             hasPower = value;
+        }
+    }
+
+    public static bool HasDied
+    {
+        get
+        {
+            return hasDied;
+        }
+
+        set
+        {
+            hasDied = value;
+        }
+    }
+
+    public static bool CanGrow
+    {
+        get
+        {
+            return canGrow;
+        }
+
+        set
+        {
+            canGrow = value;
         }
     }
 }

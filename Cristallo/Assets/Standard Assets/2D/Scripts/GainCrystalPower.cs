@@ -15,6 +15,8 @@ public class GainCrystalPower : MonoBehaviour {
     public bool purple;
 	public Sprite empty;
 	public Sprite redSprite;
+    public Sprite greenSprite;
+    public Sprite purpleSprite;
     public AudioSource collection;
     public AudioSource depower;
 
@@ -82,7 +84,7 @@ public class GainCrystalPower : MonoBehaviour {
                 }
             }
             //Returning Power to Empty Crystal
-            else if (NearCrystal == true && active == false)
+            else if (NearCrystal == true && active == false && !PlayerStats.IsSmall)
             {
                 returning = true;
                 if (PlayerStats.HasPower == true)
@@ -111,8 +113,10 @@ public class GainCrystalPower : MonoBehaviour {
                     }
                     else if (PlayerStats.HasGreen && returning && PlayerStats.IsSmall == false)
                     {
+                        SpriteRenderer sr = gameObject.GetComponent<SpriteRenderer>();
                         PlayerStats.HasGreen = false;
                         green = true;
+                        sr.sprite = greenSprite;
                         returning = false;
                     }
                     else if (PlayerStats.HasBlue && returning)
@@ -123,8 +127,10 @@ public class GainCrystalPower : MonoBehaviour {
                     }
                     else if (PlayerStats.HasPurple && returning)
                     {
+                        SpriteRenderer sr = gameObject.GetComponent<SpriteRenderer>();
                         PlayerStats.HasPurple = false;
                         purple = true;
+                        sr.sprite = purpleSprite;
                         returning = false;
                     }
                     PlayerStats.HasPower = false;
@@ -132,7 +138,7 @@ public class GainCrystalPower : MonoBehaviour {
                 }
             }
             //Swapping Powers
-            else if(NearCrystal == true && active == true && PlayerStats.HasPower == true)
+            else if(NearCrystal == true && active == true && PlayerStats.HasPower == true && !PlayerStats.IsSmall)
             {
                 if (cm.red)
                 {
@@ -155,19 +161,23 @@ public class GainCrystalPower : MonoBehaviour {
                     green = false;
                     cm.green = false;
                 }
+                SpriteRenderer sr = gameObject.GetComponent<SpriteRenderer>();
                 print(cm.ColorManager[0]);
                 print(cm.ColorManager[1]);
                 switch (cm.ColorManager[0])
                 {
                     case "red":
+                        sr.sprite = redSprite;
                         red = true;
                         PlayerStats.HasRed = false;
                         break;
                     case "green":
+                        sr.sprite = greenSprite;
                         green = true;
                         PlayerStats.HasGreen = false;
                         break;
                     case "purple":
+                        sr.sprite = purpleSprite;
                         PlayerStats.HasPurple = false;
                         purple = true;
                         break;

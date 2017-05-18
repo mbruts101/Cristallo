@@ -35,6 +35,7 @@ namespace UnityStandardAssets._2D
         public Transform wallCheck;
         float wallTouchRaidus = 0.2f;
         
+        
         Vector3 gravity;
         public bool touchingWall = false;
 
@@ -82,8 +83,12 @@ namespace UnityStandardAssets._2D
         }
         void Update()
         {
-            
 
+            if (PlayerStats.HasDied)
+            {
+                Physics2D.gravity = gravity;
+                PlayerStats.HasDied = false;
+            }
             if (Input.GetKeyDown(KeyCode.LeftShift) && m_Grounded)
             {
 				isSprinting = true;
@@ -119,7 +124,7 @@ namespace UnityStandardAssets._2D
                     small = true;
                     PlayerStats.IsSmall = true;
                 }
-                else if (cm.NearCrystal == false && PlayerStats.HasGreen && small == true)
+                else if (cm.NearCrystal == false && PlayerStats.HasGreen && small == true && !PlayerStats.CanGrow)
                 {
                     transform.Translate(0f, 1f, 0f);
                     transform.localScale = defaultScale;
