@@ -34,6 +34,7 @@ namespace UnityStandardAssets._2D
         private Quaternion defaultRotation;
         public Transform wallCheck;
         float wallTouchRaidus = 0.2f;
+        private AudioSource gravityshift;
         
         
         Vector3 gravity;
@@ -54,6 +55,7 @@ namespace UnityStandardAssets._2D
             emptypower = audios[3];
             defaultScale = new Vector3(transform.localScale.x, transform.localScale.y, transform.localScale.z);
             gravity = Physics2D.gravity;
+            gravityshift = audios[4];
             defaultRotation = transform.rotation;
         }
 
@@ -145,6 +147,7 @@ namespace UnityStandardAssets._2D
                 
                 if (cm.NearCrystal == false && PlayerStats.HasPurple == true && m_Grounded && gShifted)
                 {
+                    gravityshift.Play();
                     print("changing gravity");
                     Physics2D.gravity *= -1;
                     transform.Rotate(0f, 0f, 180f);
@@ -154,6 +157,7 @@ namespace UnityStandardAssets._2D
                 }
                 else if (cm.NearCrystal == false && PlayerStats.HasPurple == true && m_Grounded && !gShifted)
                 {
+                    gravityshift.Play();
                     print("changing gravity");
                     Physics2D.gravity *= -1;
                     transform.Rotate(0f, 0f, 180f);

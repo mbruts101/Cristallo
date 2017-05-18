@@ -2,7 +2,7 @@
 using System.Collections;
 
 public class WinScript : MonoBehaviour {
-
+    GameObject endzone;
 	// Use this for initialization
 	void Start () {
 	
@@ -18,7 +18,8 @@ public class WinScript : MonoBehaviour {
         {
             if (Input.GetKeyDown(KeyCode.W))
             {
-                
+                endzone = GameObject.FindGameObjectWithTag("endzone");
+                col.transform.position = endzone.transform.position;
             }
         }
     }
