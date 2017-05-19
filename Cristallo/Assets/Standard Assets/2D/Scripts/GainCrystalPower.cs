@@ -140,6 +140,7 @@ public class GainCrystalPower : MonoBehaviour {
             //Swapping Powers
             else if(NearCrystal == true && active == true && PlayerStats.HasPower == true && !PlayerStats.IsSmall)
             {
+                collection.Play();
                 if (cm.red)
                 {
                     cm.ColorManager.Add("red");

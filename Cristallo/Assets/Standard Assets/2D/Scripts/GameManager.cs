@@ -10,7 +10,9 @@ public class GameManager : MonoBehaviour {
     public bool hasCheckpoint;
     private GameObject[] respawns;
     private AudioSource death;
-    private AudioSource ambience;
+    public AudioSource ambience;
+    public AudioSource ambiencelvl2;
+    public AudioSource ambiencelvl3;
     private AudioSource injury;
     public GameObject life1;
     public GameObject life2;
@@ -22,6 +24,8 @@ public class GameManager : MonoBehaviour {
         death = audios[0];
         ambience = audios[1];
         injury = audios[2];
+        ambiencelvl2 = audios[3];
+        ambiencelvl3 = audios[4];
         FindCurrentPlayerObject();
         if(PlayerStats.Health < 0 || PlayerStats.Health > 3)
         {
